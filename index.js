@@ -130,7 +130,7 @@ const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
 
-
+i
 // create a string that explains the number of unfunded games using the ternary operator
 
 
