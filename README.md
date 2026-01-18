@@ -10,14 +10,14 @@ Time spent: **about 18hr** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] The introduction section explains the background of the company and how many games remain unfunded.
-- [ ] The Stats section includes information about the total contributions and dollars raised as well as the top two most funded games.
-- [ ] The Our Games section initially displays all games funded by Sea Monster Crowdfunding
-- [ ] The Our Games section has three buttons that allow the user to display only unfunded games, only funded games, or all games.
+- [ *] The introduction section explains the background of the company and how many games remain unfunded.
+- [ *] The Stats section includes information about the total contributions and dollars raised as well as the top two most funded games.
+- [ *] The Our Games section initially displays all games funded by Sea Monster Crowdfunding
+- [ *] The Our Games section has three buttons that allow the user to display only unfunded games, only funded games, or all games.
 
 The following **optional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [ *] List anything else that you can get done to improve the app functionality!
 
 one of the major changes that i felt was necesary to present unfunded and funded games individually along with an addition of the two combine when you click on show all. when you filter a list the information displayed show be represented in the stats.
 
@@ -30,6 +30,7 @@ Here's a walkthrough of implemented features:
 <!-- Replace this with whatever GIF tool you used! -->
 
 GIF created with ...
+<img src = "assets/BorysSolorzano.gif" title= "Video Walkthrough" alt='Video Walkthrough'>
 
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
