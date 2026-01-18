@@ -176,3 +176,54 @@ firstGameContainer.appendChild(topGameEl);
 const runnerUpEl = document.createElement("p");
 runnerUpEl.innerText = runnerUpGame.name;
 secondGameContainer.appendChild(runnerUpEl);
+
+
+function updateBoxesForSelectedGames(games) {
+  const contributions = games.reduce((acc, game) => acc + game.backers, 0);
+  const raised = games.reduce((acc, game) => acc + game.pledged, 0);
+
+  contributionsCard.innerHTML = `${contributions.toLocaleString()}`;
+  raisedCard.innerHTML = `$${raised.toLocaleString()}`;
+  gamesCard.innerHTML = `${games.length}`;
+
+  const unfundedCount = games.filter(game => game.pledged < game.goal).length;
+
+  const newDescription = `A total of $${raised.toLocaleString()} has been raised for ${games.length} games.
+Currently, ${unfundedCount} game${unfundedCount === 1 ? "" : "s"} remain unfunded.`;
+
+
+  const ps = descriptionContainer.querySelectorAll("p");
+  const dynamicP = ps.length >= 2 ? ps[ps.length - 1] : descriptionParagraph;
+  dynamicP.innerText = newDescription;
+
+  // --- Top 2 (Challenge 7 concept, but recalculated for the selected list)
+  const sorted = [...games].sort((a, b) => b.pledged - a.pledged);
+  const top = sorted[0];
+  const runnerUp = sorted[1];
+
+  // Remove ONLY the name <p> elements we appended (leave the headings)
+  firstGameContainer.querySelectorAll("p").forEach(p => p.remove());
+  secondGameContainer.querySelectorAll("p").forEach(p => p.remove());
+
+  const topP = document.createElement("p");
+  topP.innerText = top ? top.name : "N/A";
+  firstGameContainer.appendChild(topP);
+
+  const runnerP = document.createElement("p");
+  runnerP.innerText = runnerUp ? runnerUp.name : "N/A";
+  secondGameContainer.appendChild(runnerP);
+}
+
+unfundedBtn.addEventListener("click", () => {
+  const unfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal);
+  updateBoxesForSelectedGames(unfundedGames);
+});
+
+fundedBtn.addEventListener("click", () => {
+  const fundedGames = GAMES_JSON.filter(game => game.pledged >= game.goal);
+  updateBoxesForSelectedGames(fundedGames);
+});
+
+allBtn.addEventListener("click", () => {
+  updateBoxesForSelectedGames(GAMES_JSON);
+});
