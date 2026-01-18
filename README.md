@@ -1,8 +1,8 @@
-# WEB102 Prework - _Name of App Here_
+# WEB102 Prework - _P3SKY's League_
 
 Submitted by: **Borys Solorzano**
 
-**Name of your app** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
+**P3SKY's League** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
 Time spent: **about 18hr** hours spent in total
 
